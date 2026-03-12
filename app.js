@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if ($('btnDoImport')) {
     $('btnDoImport').addEventListener('click', () => {
       const val = $('importArea').value;
-      const m = val.match(//);
+      const m = html.match(/<!--\s*ELVHX_TOOL_DATA:([A-Za-z0-9+/=]+)\s*-->/);
       if (m && m[1]) {
         try {
           const parsed = JSON.parse(decodeURIComponent(escape(atob(m[1]))));
